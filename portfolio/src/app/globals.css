@@ -16,12 +16,42 @@
   }
 }
 
+.visible {
+  transition-duration: 0.4s;
+  opacity: 1;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background:#f4f4f4;
+}
+
+@font-face{
+  font-family: 'NanumNeo';
+  src: url('../app/assets/font/NanumSquareNeo-bRg.ttf') format('truetype') ,       local('NanumNeo');
+
+}
+
+@font-face{
+  font-family: 'NanumNeoLt';
+  src: url('../app/assets/font/NanumSquareNeo-aLt.ttf') format('truetype') ,       local('NanumNeoLt');
+
+}
+@font-face{
+  font-family: 'NanumNeoEB';
+  src: url('../app/assets/font/NanumSquareNeo-dEb.ttf') format('truetype') ,       local('NanumNeoEB');
+
+}
+
+@font-face {
+  font-family: 'Pretendard-Bold';
+  src: url('../app/assets/font/Pretendard-Bold.ttf')format('truetype') ,       local('Pretendard-Bold')
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('../app/assets/font/Pretendard-Regular.ttf')format('truetype') ,       local('Pretendard-Regular');
+}
+@font-face {
+  font-family: 'Pretendard-SemiBold';
+  src: url('../app/assets/font/Pretendard-SemiBold.ttf')format('truetype') ,       local('Pretendard-SemiBold');
 }
