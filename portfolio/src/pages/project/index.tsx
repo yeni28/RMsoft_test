@@ -27,7 +27,7 @@ function index() {
     return (
         <div className="bg-black w-screen h-screen flex items-center justify-center relative">
             <img src="/image/background1.jpg" alt="bg" className="absolute top-0 left-0 w-full h-full object-cover opacity-90" />
-            <p className="absolute top-20 left-1/2 z-30  transform -translate-x-1/2 text-white text-[1.2rem]"> 클릭하면 프로젝트 상세보기가 가능합니다. </p>
+            <p className="absolute top-20 left-1/2 z-30  transform -translate-x-1/2 text-violet text-[1.2rem]"> 클릭하면 프로젝트 상세보기가 가능합니다. </p>
             <div className="grid grid-cols-3 gap-[7rem] relative z-10">
                 <ProjectCard
                     image="/image/pjt1.png"
