@@ -15,9 +15,6 @@ function Navbar() {
                     <li className="text-[#ffffff8c] hover:text-white">
                         <Link href="/project">PROJECT</Link>
                     </li>
-                    <li className="text-[#ffffff8c] hover:text-white">
-                        <Link href="/contact">CONTACT</Link>
-                    </li>
                 </ul>
             </nav>
         </div>

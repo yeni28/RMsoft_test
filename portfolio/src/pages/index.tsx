@@ -34,11 +34,9 @@ export default function Home() {
                 <p ref={el => (paragraphsRef.current[1] = el)} className={`paragraph ${isVisible ? 'fadeIn' : ''}`}>
                     효율적인 시각화를 위해 고민하는
                 </p>
-                <p ref={el => (paragraphsRef.current[2] = el)} className={`paragraph ${isVisible ? 'fadeIn' : ''}`}>
-                    굳이의 힘을 믿는 개발자
-                </p>
+
                 <p className={`font-NanumNeoEB paragraph ${isVisible ? 'fadeIn' : ''}`} ref={el => (paragraphsRef.current[3] = el)}>
-                    김예은 입니다.
+                    프론트엔드 개발자, 김예은 입니다.
                 </p>
             </div>
         </div>

@@ -1,4 +1,6 @@
 import React, { CSSProperties } from 'react';
+import '../Button/ButtonTag';
+import ButtonTag from '../Button/ButtonTag';
 
 interface CardProps {
     image: string;
@@ -7,11 +9,12 @@ interface CardProps {
     contribution: string;
     people: string;
     duration: string;
-    onClick: () => void;
+    lag: string[];
+    onClick?: () => void;
     style?: CSSProperties;
 }
 
-function ProjectCard({ style, image, title, role, contribution, people, duration, onClick }: CardProps) {
+function ProjectCard({ style, image, title, role, contribution, people, duration, onClick, lag }: CardProps) {
     return (
         <div
             className="bg-[#ffffff52] p-8 rounded-3xl w-[23rem] h-[35rem] cursor-pointer "
@@ -35,7 +38,6 @@ function ProjectCard({ style, image, title, role, contribution, people, duration
             </div>
             {/* 프로젝트 제목 */}
             <p className="font-NanumNeoEB text-violet text-[2rem] text-center ">{title}</p>
-
             <p className=" text-[#3c0c58cc] text-center ">{duration}</p>
             {/* 역할과 기여도 */}
             <div
@@ -53,6 +55,11 @@ function ProjectCard({ style, image, title, role, contribution, people, duration
                     <p className="font-NanumNeoEB">개발인원</p>
                     <span className="text-[.9rem]">{people}</span>
                 </div>
+            </div>
+            <div className="flex mt-5 ">
+                {lag.map((value, index) => (
+                    <ButtonTag key={index} innerValue={value} />
+                ))}
             </div>
         </div>
     );
