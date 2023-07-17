@@ -35,7 +35,7 @@ function ProjectModal({ title, content, videoUrl, figma, github, develop, learn,
 
     return (
         <div className="fixed z-30 top-0 left-0 w-[100vw] h-[100vh] flex justify-center	items-center" style={{ backgroundColor: 'rgba(0,0,0, 0.5)' }}>
-            <div className="flex flex-col justify-between absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white items-center w-[70%] max-h-[70%] text-center rounded-[.4rem]">
+            <div className="flex flex-col justify-between absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#fdfdfd] items-center w-[70%] max-h-[70%] text-center rounded-[.4rem] py-[2rem]">
                 <div className="absolute top-4 right-10">
                     <AiOutlineClose onClick={onClose} className="text-gray-500 text-[2rem] cursor-pointer" />
                 </div>

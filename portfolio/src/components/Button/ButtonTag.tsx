@@ -2,13 +2,12 @@ import React from 'react';
 
 function ButtonTag({ innerValue }: ButtonProps) {
     return (
-        <button
+        <div
             className="flex justify-center items-center rounded-full mr-2 p-3 w-[full] h-5 text-[1rem
         ] font-Pre bg-violet text-white"
-            type="button"
         >
             {innerValue}
-        </button>
+        </div>
     );
 }
 
