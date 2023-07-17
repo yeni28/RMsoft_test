@@ -15,11 +15,8 @@
       --background-end-rgb: 0, 0, 0;
     }
   }
-  
-  .visible {
-    transition-duration: 0.4s;
-    opacity: 1;
-  }
+
+
   
   body {
     color: rgb(var(--foreground-rgb));

@@ -1,43 +1,57 @@
+import React, { useState, useEffect } from 'react';
+
 import '../styles/animation.module.css';
-import React, { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
-    const [isVisible, setIsVisible] = useState(false);
-    const paragraphsRef = useRef<(HTMLElement | null)[]>([]);
+    const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
-            const paragraphs = paragraphsRef.current;
-            const scrollPosition = window.scrollY + window.innerHeight;
-
-            paragraphs.forEach((p, index) => {
-                if (p && p.offsetTop < scrollPosition) {
-                    p.classList.add('fadeIn');
-                } else if (p) {
-                    p.classList.remove('fadeIn');
-                }
-            });
+            setScrollY(window.scrollY || document.documentElement.scrollTop);
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        if (typeof window !== 'undefined') {
+            window.addEventListener('scroll', handleScroll);
+
+            return () => {
+                window.removeEventListener('scroll', handleScroll);
+            };
+        }
     }, []);
 
+    const opacity1 = scrollY > 30 ? 1 : 0.1;
+    const opacity2 = scrollY > 100 ? 1 : 0;
+    const opacity3 = scrollY > 200 ? 1 : 0;
+    const left = scrollY > 400 ? '50%' : '5%';
+    const bg = scrollY > 400 ? '0px 0px 20px  black' : '';
+    const transitionDuration = '1s';
     return (
-        <div>
-            <div className="font-NanumNeo text-[4rem]">
-                <p ref={el => (paragraphsRef.current[0] = el)} className={`paragraph ${isVisible ? 'fadeIn' : ''}`}>
-                    빠르게 배우고
-                </p>
-                <p ref={el => (paragraphsRef.current[1] = el)} className={`paragraph ${isVisible ? 'fadeIn' : ''}`}>
-                    효율적인 시각화를 위해 고민하는
-                </p>
+        <div className="h-[50rem] w-auto ">
+            <img src="/image/computer.jpg" alt="bg" className="absolute top-0 left-0 " />
 
-                <p className={`font-NanumNeoEB paragraph ${isVisible ? 'fadeIn' : ''}`} ref={el => (paragraphsRef.current[3] = el)}>
-                    프론트엔드 개발자, 김예은 입니다.
-                </p>
+            <div className="font-PreB">
+                <div className={`text-[4rem] left-1/2  transform -translate-x-1/2  z-30 absolute text-white top-[60%] transition duration-300 ease-in-out`} style={{ opacity: `${opacity1}` }}>
+                    좋은 코드를 고민하는
+                </div>
+                <div className={`text-[4rem] left-1/2  transform -translate-x-1/2  z-30 absolute text-white top-[70%] transition duration-300 ease-in-out`} style={{ opacity: `${opacity2}` }}>
+                    빠르게 배우는
+                </div>
+                <div className={`text-[4rem] left-1/2  transform -translate-x-1/2  z-30 absolute text-white top-[80%] transition duration-300 ease-in-out`} style={{ opacity: `${opacity3}` }}>
+                    꾸준히 학습하는
+                </div>
+                <div
+                    className="z-30 text-[10rem] absolute text-white top-[120%] "
+                    style={{
+                        left: `${left}`,
+                        transitionDuration: `${transitionDuration}`,
+                        textShadow: `${bg}`,
+                    }}
+                >
+                    FRONT-END
+                </div>
+                <div className="z-30 text-[10rem] absolute border-white border-3 top-[140%] left-[50%]" style={{ color: 'transparent', WebkitTextStroke: '0.2rem #fff', padding: '2rem' }}>
+                    김예은입니다.
+                </div>
             </div>
         </div>
     );
